@@ -10,4 +10,5 @@ import com.tshirt.pds.entities.Categorie;
 @RepositoryRestResource
 public interface CategorieRepository extends JpaRepository<Categorie, Long>{
 
+
 }

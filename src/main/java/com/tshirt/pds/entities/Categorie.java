@@ -8,6 +8,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,7 +28,10 @@ public class Categorie {
 	private long id;
 	private String name;
 	private String Description;
-	@OneToMany(mappedBy = "categorie")
-	private Collection<Produit> products;
+	
+	  @OneToMany(mappedBy = "categorie")
+	  @JsonProperty(access = Access.WRITE_ONLY)
+	  private Collection<Produit> products;
+	 
 
 }
